@@ -4,13 +4,13 @@ import axios from 'axios';
 
 // Async thunk for user login
 export const loginUser = createAsyncThunk('user/loginUser', async (credentials) => {
-  const response = await axios.post('/api/users/login', credentials);
+  const response = await axios.post('https://hoodlum-mentality-backend-8ec976c27e34.herokuapp.com/api/users/login', credentials);
   return response.data;
 });
 
 // Async thunk for user registration
 export const registerUser = createAsyncThunk('user/registerUser', async (userData) => {
-  const response = await axios.post('/api/users/register', userData);
+  const response = await axios.post('https://hoodlum-mentality-backend-8ec976c27e34.herokuapp.com/api/users/register', userData);
   return response.data;
 });
 

@@ -4,7 +4,7 @@ import axios from 'axios';
 
 // Async thunk to fetch products
 export const fetchProducts = createAsyncThunk('products/fetchProducts', async () => {
-  const response = await axios.get('/api/products');
+  const response = await axios.get('https://hoodlum-mentality-backend-8ec976c27e34.herokuapp.com/api/products');
   return response.data;
 });
 
