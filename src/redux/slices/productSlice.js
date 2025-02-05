@@ -1,10 +1,11 @@
 // src/redux/slices/productSlice.js
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import API from '../../api';
 
 // Async thunk to fetch products
 export const fetchProducts = createAsyncThunk('products/fetchProducts', async () => {
-  const response = await axios.get('https://hoodlum-mentality-backend-8ec976c27e34.herokuapp.com/api/products');
+  const response = await API.get('https://hoodlum-mentality-backend-8ec976c27e34.herokuapp.com/api/products');
   return response.data;
 });
 

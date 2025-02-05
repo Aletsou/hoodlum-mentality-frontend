@@ -1,6 +1,7 @@
 // src/redux/slices/userSlice.js
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import API from '../../api';
 
 // Async thunk for user login
 export const loginUser = createAsyncThunk('user/loginUser', async (credentials) => {
@@ -10,7 +11,7 @@ export const loginUser = createAsyncThunk('user/loginUser', async (credentials) 
 
 // Async thunk for user registration
 export const registerUser = createAsyncThunk('user/registerUser', async (userData) => {
-  const response = await axios.post('https://hoodlum-mentality-backend-8ec976c27e34.herokuapp.com/api/users/register', userData);
+  const response = await API.post('https://hoodlum-mentality-backend-8ec976c27e34.herokuapp.com/api/users/register', userData);
   return response.data;
 });
 
