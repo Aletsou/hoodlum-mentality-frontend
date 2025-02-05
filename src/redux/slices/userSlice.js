@@ -1,11 +1,10 @@
 // src/redux/slices/userSlice.js
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
 import API from '../../api';
 
 // Async thunk for user login
 export const loginUser = createAsyncThunk('user/loginUser', async (credentials) => {
-  const response = await axios.post('https://hoodlum-mentality-backend-8ec976c27e34.herokuapp.com/api/users/login', credentials);
+  const response = await API.post('https://hoodlum-mentality-backend-8ec976c27e34.herokuapp.com/api/users/login', credentials);
   return response.data;
 });
 

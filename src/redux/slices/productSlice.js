@@ -1,6 +1,5 @@
 // src/redux/slices/productSlice.js
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
 import API from '../../api';
 
 // Async thunk to fetch products
